@@ -8,8 +8,20 @@ class DatePicker extends React.Component {
         <header>
           <button>{'<'}</button>
           <select></select>
+          <select></select>
           <button>{'>'}</button>
         </header>
+
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
       </div>
     );
   }
