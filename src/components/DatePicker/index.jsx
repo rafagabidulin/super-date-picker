@@ -1,5 +1,5 @@
 import React from 'react';
-import * as caledar from './calendar.js'
+import * as caledar from './calendar.js';
 import './index.css'
 
 class DatePicker extends React.Component {
@@ -55,13 +55,9 @@ class DatePicker extends React.Component {
 
   render() {
     const { years, months, weekDays } = this.props;
-    const monthData = [
-      [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()],
-      [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()],
-      [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()],
-      [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()],
-      [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()]
-    ]
+
+    const monthData = [caledar.getMonthData()];
+
     return (
       <div className="datePicker">
         <header>
@@ -69,7 +65,7 @@ class DatePicker extends React.Component {
 
           <select
             ref={element => this.monthSelect = element}
-            defaultValue={this.month}
+            value={this.month}
             onChange={this.handleSelectChange}
           >
             {months.map((month, index) =>
@@ -78,7 +74,7 @@ class DatePicker extends React.Component {
           </select>
           <select
             ref={element => this.yearSelect = element}
-            defaultValue={this.year}
+            value={this.year}
             onChange={this.handleSelectChange}
           >
             {years.map((year) => 
