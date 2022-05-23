@@ -44,7 +44,6 @@ class DatePicker extends React.Component {
     const month = this.monthSelect.value;
     const date = new Date(year, month);
 
-
     this.setState({ date });
   }
 
@@ -56,7 +55,7 @@ class DatePicker extends React.Component {
   render() {
     const { years, months, weekDays } = this.props;
 
-    const monthData = [caledar.getMonthData()];
+    const monthData = caledar.getMonthData(this.year, this.month);
 
     return (
       <div className="datePicker">
