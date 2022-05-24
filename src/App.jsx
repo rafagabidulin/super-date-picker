@@ -2,9 +2,11 @@ import React from 'react';
 import DatePicker from './components/DatePicker';
 
 class App extends React.Component {
-  state = {
-    date: null
-  };
+  constructor(props) {
+    super(props);
+    this.state = { date: null };
+  }
+
 
   handleDateChange = date => this.setState({ date })
   render() {

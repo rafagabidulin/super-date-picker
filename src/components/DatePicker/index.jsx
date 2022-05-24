@@ -4,6 +4,15 @@ import * as caledar from './calendar.js';
 import './index.css'
 
 class DatePicker extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: this.props.date,
+      currentDate: new Date(),
+      selectedDate: null
+    };
+  }
+
   static defaultProps = {
     date: new Date(),
     years: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
@@ -12,11 +21,7 @@ class DatePicker extends React.Component {
     onChange: Function.prototype
   }
 
-  state = {
-    date: this.props.date,
-    currentDate: new Date(),
-    selectedDate: null
-  };
+
 
   get year() {
     return this.state.date.getFullYear();
