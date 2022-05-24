@@ -19,6 +19,10 @@ button, select {
   cursor: pointer;
 }
 
+button:focus, select:focus {
+  outline: none;
+}
+
 button {
   display: inline-flex;
   justify-content: center;
