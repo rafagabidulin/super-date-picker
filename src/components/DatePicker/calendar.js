@@ -19,6 +19,16 @@ const monthNames = {
   December: 11
 };
 
+export function areEqual(a, b) {
+  if (!a || !b) return false;
+
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+}
+
 export function isLeapYear(year) {
   return !((year % 4) || (!(year % 100) && (year % 400)));
 };
