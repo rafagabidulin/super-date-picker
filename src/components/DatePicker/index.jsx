@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import * as caledar from './calendar.js';
 import './index.css'
 
@@ -54,6 +55,7 @@ class DatePicker extends React.Component {
 
   render() {
     const { years, months, weekDays } = this.props;
+    const { currentDate, selectedDate } = this.state;
 
     const monthData = caledar.getMonthData(this.year, this.month);
 
@@ -93,10 +95,14 @@ class DatePicker extends React.Component {
           </thead>
           <tbody>
             {monthData.map((week, index) =>
-              <tr key={index}>
+              <tr key={index} className='week'>
                 {week.map((date, index) => date ? 
                   <td 
                     key={index}
+                    className={classNames('day', {
+                      'today': caledar.areEqual(date, currentDate),
+                      'selected': caledar.areEqual(date, selectedDate),
+                    })}
                     onClick={() => this.handleDayClick(date)}
                   >{date.getDate()}</td>
                   :
