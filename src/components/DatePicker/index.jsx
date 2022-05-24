@@ -21,8 +21,6 @@ class DatePicker extends React.Component {
     onChange: Function.prototype
   }
 
-
-
   get year() {
     return this.state.date.getFullYear();
   }

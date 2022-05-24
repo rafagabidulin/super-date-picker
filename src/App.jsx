@@ -7,7 +7,6 @@ class App extends React.Component {
     this.state = { date: null };
   }
 
-
   handleDateChange = date => this.setState({ date })
   render() {
     const { date } = this.state;
